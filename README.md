@@ -1,6 +1,6 @@
 # xml-1a
 
-Cours d'initiation à XML
+Cours d'initiation à XML.
 
 # Dépendances logiciels #
 
@@ -8,10 +8,18 @@ Plate-forme de test : Ubuntu 14.04.2
 
 * `node.js`
 * `npm`
-* `reveal.js` (Cf. ci-dessous)
-* `pandoc` (Cf. ci-dessous)
+* `reveal.js` (Cf. [ci-dessous](#reveal.js))
+* `pandoc` (Cf. [ci-dessous](#pandoc))
 
-## Installation de reveal.js ##
+Pour cloner complètement ce projet :
+
+```
+$ git clone --recursive https://github.com/dgricci/xml-1a
+```
+
+## Post-installation de reveal.js ##
+
+[^reveal.js]:
 
 ### Préalable ###
 
@@ -19,27 +27,30 @@ Plate-forme de test : Ubuntu 14.04.2
 
 ```bash
 $ sudo http_proxy=host:port https_proxy=host:port npm install -g grunt-cli
+# certains répertoires de $HOME/.npm appartiennent à root avec l'installation
+# de grunt-cli en global, les re-donner à $USER :
+$ sudo chown -R $USER:$(groups $USER | sed -e 's/^.* : //' | cut -d\  -f1) $HOME/.npm/{nopt,minimatch,glob,lodash,inherits}
 ```
 
-### Installation de reveal.js ###
+### Préparation à l'utilisation de reveal.js ###
 
 Dans le répertoire du projet :
 
 ```bash
-$ http_proxy=host:port https_proxy=host:port wget https://github.com/hakimel/reveal.js/archive/3.1.0.zip
-$ unzip reveal.js-3.1.0.zip
-$ ln -s reveal.js-3.1.0 reveal.js
-$ cd reveal.js
-# certains répertoires de $HOME/.npm appartiennent à root avec l'installation
-# de grunt-cli en global, les re-donner à $USER :
-$ sudo chown -R $USER:$(groups $USER | sed -e 's/^.* : //' | cut -d\  -f1) $HOME/.npm/{nopt,minimatch,glob,lodash,inherits}
+$ cd externals/reveal.js
 $ http_proxy=host:port https_proxy=host:port npm install
-$ $ grunt cssmin uglify
+$ grunt cssmin uglify
 ```
 
 ## Dépendance pandoc ##
 
-Il faut installer le paquet `libghc-highlighting-kate-dev`.
+[^pandoc]:
+
+Il faut installer le paquet `libghc-highlighting-kate-dev` :
+
+```
+$ sudo apt-get install libghc-highlighting-kate-dev
+```
 
 Il est possible de tester la génération d'un diaporama avec :
 
