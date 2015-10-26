@@ -528,7 +528,7 @@ $ CLASS_PATH=.:$XERCES_HOME/xercesImpl.ja:$XERCES_HOME/xml-apis.jar:$XERCES_HOME
 
 ## Architecture ##
 
-![AJAX](Ajax-model-fr.png)
+![AJAX](img/Ajax-model-fr.png)
 
 
 # XSD #
@@ -1484,7 +1484,7 @@ $ xsltproc -o stagiaires.html stagiaires.xsl stagiaires.xml
 * http://www.liafa.jussieu.fr/~carton/Enseignement/XML/Cours/
 * http://www.gchagnon.fr/cours/xml/index.html
 
-![](by-nc-sa.png)
+![](img/by-nc-sa.png)
 
 <div class="notes">
 * Validateurs :
@@ -1496,7 +1496,7 @@ $ xsltproc -o stagiaires.html stagiaires.xsl stagiaires.xml
 * document généré via :
 
 ```bash
-pandoc -s -t revealjs --slide-level=2 --section-divs --template=ign-ensg-revealjs-template.html --email-obfuscation=none --css=ign.css --highlight-style=kate -V slideNumber=true -V transition=none -o XML1-A-slides.html XML1-A-slides.md
+pandoc -s -t revealjs --slide-level=2 --section-divs --template=template/ign-ensg-revealjs.html --email-obfuscation=none --css=css/ign.css --highlight-style=kate -V slideNumber=true -V transition=none -o XML1-A-slides.html XML1-A-slides.md
 ```
 
 * version des diapositives : 0.1.0

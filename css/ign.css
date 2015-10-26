@@ -63,14 +63,14 @@
     height: inherit;
 }
 .reveal .slides > section:first-child {
-    background-image: url('slide-ign-fond-premiere.jpg');
+    background-image: url('../img/slide/ign-fond-premiere.jpg');
     background-color: white;
     background-repeat: no-repeat;
     background-position: center 90%;
 }
 .reveal .slides > section:first-child h1 {
     background-color: transparent;
-    background-image: url("slide-ign-logo-ign.png"), url("slide-ign-logo-ensg.jpg");
+    background-image: url("../img/slide/ign-logo-ign.png"), url("../img/slide/ign-logo-ensg.jpg");
     background-position: left top, right top;
     background-repeat: no-repeat;
     background-size: 231px 249px, 142px 150px;
@@ -84,7 +84,7 @@
 }
 .reveal .slides > section > section {
     height: inherit;
-    background-image: url('slide-ign-haut.png');
+    background-image: url('../img/slide/ign-haut.png');
     background-repeat: repeat-x;
 }
 .reveal .slides > section > section.titleslide h1 {

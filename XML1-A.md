@@ -32,7 +32,7 @@ Notes de [cours](XML1-a-slides).
 © IGN 2009 - Véronique Lemaire - Département Informatique (ENSG)\
 © IGN 2015 - Didier Richard - ValiLab (DRE)
 
-![](by-nc-sa.png)
+![](img/by-nc-sa.png)
 
 ---
 
@@ -122,7 +122,7 @@ utilisant une structuration strictement hiérarchique (**notion d'arbre**).
 
 _Exemple du même extrait XML sous forme d'arbre :_
 
-![nœud crs](crs.jpeg "nœud crs")
+![nœud crs](img/crs.jpeg "nœud crs")
 
 Le contrôle de la structure du document est assuré soit par la DTD
 (**D**ocument **T**ype **D**efinition)[^dtd], soit par un XSD.
@@ -2628,7 +2628,7 @@ On clique alors sur le bouton `Transform XML with XSL` !
 On obtient dans le champs "Result" la page HTML. On copie-colle ce champs dans
 `stagiaires.html` que l'on ouvre dans un butineur :
 
-![](stagiaires.png)
+![](img/stagiaires.png)
 
 
 __Et voilà !__
