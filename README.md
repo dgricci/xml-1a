@@ -8,8 +8,8 @@ Plate-forme de test : Ubuntu 14.04.2
 
 * `node.js`
 * `npm`
-* `reveal.js` (Cf. [ci-dessous](#reveal.js))
-* `pandoc` (Cf. [ci-dessous](#pandoc))
+* `reveal.js` (Cf. [ci-dessous](#id="user-content-post-installation-de-revealjs"))
+* `pandoc` (Cf. [ci-dessous](#id="user-content-dépendance-pandoc"))
 
 Pour cloner complètement ce projet :
 
