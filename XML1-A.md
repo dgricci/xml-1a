@@ -1744,7 +1744,7 @@ code postal ville
 
 Ce faisant on perd la direction, le service et le lieu de travail de chaque
 personne, il faut donc rejouter ces relations sous forme de deux attributs sur
-chaque personne. On obtient le fichier cours.xml :
+chaque personne. On obtient le fichier stagiaires.xml :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -1882,7 +1882,7 @@ On concatène ces morceaux pour obtenir la DTD finale (stagiaires.dtd) :
 >
 ```
 
-Le fichier cours.xml peut être modifié ainsi pour insérer la DTD (en interne) :
+Le fichier stagiaires.xml peut être modifié ainsi pour insérer la DTD (en interne) :
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
