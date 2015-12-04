@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<stagiaires xmlns="http://www.ensg.eu/xml1-a/0.0.1"
-            xmlns:xml1-a="http://www.ensg.eu/xml1-a/0.0.1"
-            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-            xsi:schemaLocation="http://www.ensg.eu/xml1-a/0.0.1 stagiaires.xsd"
->
+<!DOCTYPE stagiaires SYSTEM "stagiaires.dtd">
+<stagiaires>
     <personne nom="NOM1" prenom="PRÉNOM1" service="SERVICE1" lieu="LIEU1">
         <fonction>FONCTION1</fonction>
     </personne>
