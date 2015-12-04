@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!ELEMENT stagiaires (personne+,employeurs,lieuxDeTravail)>
+<!ELEMENT personne (fonction)>
+<!ATTLIST personne
+          nom CDATA #REQUIRED
+          prenom CDATA #REQUIRED
+          service IDREF #REQUIRED
+          lieu IDREF #REQUIRED
+>
+<!ELEMENT fonction (#PCDATA)>
+<!ELEMENT employeurs (employeur+)>
+<!ELEMENT employeur (direction+)>
+<!ATTLIST employeur
+          nom ID #REQUIRED
+>
+<!ELEMENT direction (service+)>
+<!ATTLIST direction
+          nom ID #REQUIRED
+>
+<!ELEMENT service EMPTY>
+<!ATTLIST service
+          nom ID #REQUIRED
+          nbAgents CDATA #IMPLIED
+>
+<!ELEMENT lieuxDeTravail (lieuDeTravail+)>
+<!ELEMENT lieuDeTravail (#PCDATA)>
+<!ATTLIST lieuDeTravail
+          nom ID #REQUIRED
+>
+
