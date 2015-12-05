@@ -10,15 +10,16 @@
 
 ## Fiche pédagogique ##
 
-Cours en deux fois 3 heures.
+Cours en deux jours (4 fois 3 heures).
+Ce cours constitue les 2 fois 3 premières heures.
 
 Notes de [cours](XML1-a-slides).
 
 
 ### Objectif ###
 
-* Initiation à XML, sa syntaxe ;
-* Initiation à XML Schema et XSL.
+* Initiation à XML, sa syntaxe (1er jour) ;
+* Initiation à XML Schema et XSL (2nd jour).
 
 
 ### Pré-requis ###
