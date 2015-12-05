@@ -19,8 +19,6 @@ $ git clone --recursive https://github.com/dgricci/xml-1a
 
 ## Post-installation de reveal.js ##
 
-[^reveal.js]:
-
 ### Préalable ###
 
 * Installation de Grunt :
@@ -43,8 +41,6 @@ $ grunt cssmin uglify
 ```
 
 ## Dépendance pandoc ##
-
-[^pandoc]:
 
 Il faut installer le paquet `libghc-highlighting-kate-dev` :
 
