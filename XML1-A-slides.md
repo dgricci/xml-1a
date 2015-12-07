@@ -88,7 +88,7 @@
 
 ## Exercice n°1 ##
 
-1. Écriver en XML les informations suivantes :
+1. Écrire en XML les informations suivantes :
     * je suis une personne
         * mon nom est ...
         * mon prénom est ...
@@ -398,7 +398,7 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 ## Exercice n°2 ##
 
-1. Écriver une DTD pour l'exercice n°1
+1. Écrire une DTD pour l'exercice n°1
 2. Modifier le fichier XML de l'exercice n°1 pour :
     * utiliser la DTD en interne ;
     * utiliser la DTD en externe.

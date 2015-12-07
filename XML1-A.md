@@ -845,7 +845,7 @@ indicatifs.
 
 ### Consignes ###
 
-1. Écriver en XML les informations suivantes :
+1. Écrire en XML les informations suivantes :
     * je suis une personne
     * mon nom est ...
     * mon prénom est ...
@@ -989,7 +989,7 @@ informe qu'il manque la définition de sa structure ... le fameux `DOCTYPE` !
 
 ### Consignes ###
 
-1. Écriver une DTD pour l'exercice n°1
+1. Écrire une DTD pour l'exercice n°1
 2. Modifier le fichier XML de l'exercice n°1 pour :
     * utiliser la DTD en interne ;
     * utiliser la DTD en externe.
