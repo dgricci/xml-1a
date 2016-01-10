@@ -1,6 +1,6 @@
 % Initiation à XML
 % Véronique Lemaire, Didier Richard
-% rèv. 2.2.0 du 04/12/2015
+% rèv. 2.2.1 du 05/01/2016
 
 ---
 

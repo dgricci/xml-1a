@@ -1,6 +1,6 @@
 % S'initier à XML
 % Didier RICHARD - IGN/DRE/ValiLab
-% 04/12/2015
+% 05/01/2016
 
 # XML #
 
