@@ -1,4 +1,4 @@
-% S'initier à XML
+% S'initier à XML - partie I
 % Didier RICHARD - IGN/DRE/ValiLab
 % 05/01/2016
 
