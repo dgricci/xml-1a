@@ -1,6 +1,6 @@
-% Initiation à XML
+% Initiation à XML - partie I
 % Véronique Lemaire, Didier Richard
-% rèv. 2.2.1 du 05/01/2016
+% rèv. 2.2.2 du 05/01/2016
 
 ---
 
