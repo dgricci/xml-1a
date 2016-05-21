@@ -26,5 +26,6 @@
 <!ELEMENT lieuDeTravail (#PCDATA)>
 <!ATTLIST lieuDeTravail
           nom ID #REQUIRED
+          coordinates CDATA #IMPLIED
 >
 

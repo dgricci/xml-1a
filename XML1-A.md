@@ -1041,13 +1041,15 @@ Employeur, direction et service sont identifiés par leur nom :
 ```
 
 Les lieux de travail sont reconnus par leur nom et contient une adresse
-postale :
+postale et, éventuellement, les coordonnées (longitude, latitude) de cette
+adresse :
 
 ```xml
 <!ELEMENT lieuxDeTravail (lieuDeTravail+)>
 <!ELEMENT lieuDeTravail (#PCDATA)>
 <!ATTLIST lieuDeTravail
           nom ID #REQUIRED
+          coordinates CDATA #IMPLIED
 >
 ```
 
@@ -1081,6 +1083,7 @@ On concatène ces morceaux pour obtenir la DTD finale (stagiaires.dtd) :
 <!ELEMENT lieuDeTravail (#PCDATA)>
 <!ATTLIST lieuDeTravail
           nom ID #REQUIRED
+          coordinates CDATA #IMPLIED
 >
 ```
 
@@ -1116,6 +1119,7 @@ Le fichier stagiaires.xml peut être modifié ainsi pour insérer la DTD (en int
 <!ELEMENT lieuDeTravail (#PCDATA)>
 <!ATTLIST lieuDeTravail
           nom ID #REQUIRED
+          coordinates CDATA #IMPLIED
 >
 ]>
 <stagiaires>
@@ -1136,7 +1140,7 @@ Le fichier stagiaires.xml peut être modifié ainsi pour insérer la DTD (en int
         </employeur>
     </employeurs>
     <lieuxDeTravail>
-        <lieuDeTravail nom="LIEU1">
+        <lieuDeTravail nom="LIEU1 coordinates="0.0,0.0"">
 rue
 code postal ville
         </lieuDeTravail>
@@ -1171,7 +1175,7 @@ ou ainsi pour référencer la DTD externe :
         </employeur>
     </employeurs>
     <lieuxDeTravail>
-        <lieuDeTravail nom="LIEU1">
+        <lieuDeTravail nom="LIEU1" coordinates="0.0,0.0">
 rue
 code postal ville
         </lieuDeTravail>
