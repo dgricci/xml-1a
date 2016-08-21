@@ -1,6 +1,6 @@
 % S'initier à XML - partie I
 % Didier RICHARD - IGN/DRE/ValiLab
-% 05/01/2016
+% 21/08/2016
 
 # XML #
 
@@ -149,7 +149,7 @@ On remarquera **standalone à "no"**
 
 * contenu de la DTD ex.dtd :
 
-```xml
+```dtd
 <!-- début de la DTD -->
 <!ELEMENT exemple (p+)>
 <!ELEMENT p (#PCDATA)>
@@ -213,7 +213,7 @@ On remarquera **standalone à "no"**
 
 * fichier formule.dtd (accessible par internet, déclarée `PUBLIC`) :
 
-```xml
+```dtd
  <!ENTITY formule-politesse "Veuillez agréer, &mme-m; à l’expression de mes salutations distinguées">
 ```
 
@@ -246,10 +246,10 @@ ISO 10646 ; par exemple le caractère é est codé par l'entité numérique &#23
 Il est néanmoins possible d'importer des entités en provenance d'une autre DTD
 :
 
-```xml
-<!ENTITY % HTMLsymbol PUBLIC "-//W3C//ENTITIES Symbols//EN//HTML">
-...
-%HTMLsymbol;
+```dtd
+ <!ENTITY % HTMLsymbol PUBLIC "-//W3C//ENTITIES Symbols//EN//HTML">
+ ...
+ %HTMLsymbol;
 ```
 
 On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
@@ -259,19 +259,19 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 * un élément se déclare comme suit, le `nom` sera celui de la balise, le
   `modèle` sera le contenu de la balise :
 
-```xml
-<!ELEMENT nom modèle>
+```dtd
+<!ELEMENT nom modele>
 ```
 
 * un élément peut être vide :
 
-```xml
+```dtd
 <!ELEMENT espace EMPTY>
 ```
 
 * un élément peut contenir n'importe quoi ...
 
-```xml
+```dtd
 <!ELEMENT fourre-tout ANY>
 ```
 
@@ -287,7 +287,7 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
         * `*` : il apparaît de 0 à n fois ;
         * `+` : il apparaît de 1 à n fois.
 
-    ```xml
+    ```dtd
 <!ELEMENT chapitre (titre, paragraphe+)>
 <!ELEMENT fileAttente (homme|femme)*>
     ```
@@ -298,7 +298,7 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
    `PCDATA` (Parsed Character Data) ou un modèle mixte comme suit (dans ce
    cas `#PCDATA` est **toujours en premier** dans la liste :
 
-```xml
+```dtd
 <!ELEMENT p (#PCDATA)>
 <!ELEMENT p (#PCDATA|note)*>
 ```
@@ -307,7 +307,7 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 * on peut déclarer une liste d’attributs pour un élément :
 
-```xml
+```dtd
 <!ATTLIST nomElement nomAtribut typeAttribut valeurAttribut>
 ```
 
@@ -320,7 +320,7 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 * on peut déclarer plusieurs attributs :
 
-```xml
+```dtd
 <!ATTLIST nomElement
    nomAtribut1 typeAttribut1 valeurAttribut1
    nomAtribut2 typeAttribut2 valeurAttribut2
@@ -332,21 +332,21 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 * chaîne de caractères quelconques `CDATA` :
 
-```xml
+```dtd
 <!ATTLIST humain nom CDATA>
 ```
 
 * identifiant `ID` (équivalent à des liens web, pas à des identificateurs de
   base de données auquel cas c'est `NMTOKEN` ou `NMTOKENS`) :
 
-```xml
+```dtd
 <!ATTLIST humain matricule ID>
 <!ATTLIST humain numero NMTOKEN>
 ```
 
 * référence à un identifiant `IDREF` ou des identifiants `IDREFS` :
 
-```xml
+```dtd
 <!ATTLIST humain adresse IDREF>
 ```
 
@@ -354,13 +354,13 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 * liste de valeurs `(valeur1|valeur2|...)`
 
-```xml
+```dtd
 <!ATTLIST humain sexe (homme|femme)>
 ```
 
 * autres types : `NOTATION`, `ENTITY`, `ENTITIES` sont réservés à l'usage des entités externes non XML
 
-```xml
+```dtd
 <!NOTATION PNG PUBLIC  "http://www.w3.org/TR/REC-png">
 <!ENTITY photoMaison SYSTEM "ma-maison.png" NDATA PNG>
 <!ELEMENT image EMPTY>
@@ -373,26 +373,26 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 
 * un attribut peut être facultatif :
 
-```xml
+```dtd
 <!ATTLIST humain salaire CDATA #IMPLIED>
 ```
 
 * un attribut peut être obligatoire :
 
-```xml
+```dtd
 <!ATTLIST humain matricule ID #REQUIRED>
 ```
 
 * un attribut peut avoir une valeur par défaut :
 
-```xml
+```dtd
 <!ATTLIST humain nom CDATA "Martin">
 <!ATTLIST humain sexe (homme|femme) "homme">
 ```
 
 * un attribut peut avoir une valeur constante :
 
-```xml
+```dtd
 <!ATTLIST humain unique CDATA #FIXED "TRUE">
 ```
 
@@ -461,16 +461,18 @@ On récupère ainsi des symboles &#8730; (\&radic;), &#8592; (\&larr;) ...
 * La déclaration de l'attribut de déclaration d'espace de noms (`xmlns`), dans
   la Définition de Type de Document (DTD) s'effectue comme suit :
 
-```xml
-<!ELEMENT prefixe:balise modèle>
+```dtd
+<!ELEMENT prefixe:balise modele>
 <!ATTLIST prefixe:balise xmlns:prefixe CDATA (#REQUIRED| #IMPLIED | #FIXED "URI")>
 ```
 
 Par exemple :
 
-```xml
+```dtd
 <!ELEMENT prefixe:balise (#PCDATA)>
 <!ATTLIST prefixe:balise xmlns:prefixe CDATA #FIXED "URI">
+```
+```xml
 ...
 <prefixe:balise xmlns:prefixe="URI"> contenu </prefixe:balise>
 ```
@@ -480,7 +482,7 @@ Par exemple :
 * Les éléments et attributs compris dans un espace de noms doivent être déclarés
   avec leur nom qualifié :
 
-```xml
+```dtd
 <!ELEMENT prefixe:balise modèle>
 <!ATTLIST prefixe:balise xmlns:prefixe CDATA (#REQUIRED| #IMPLIED | #FIXED "URI")> 
 <!ATTLIST prefixe:balise xmlns:prefixeAttribut CDATA (#REQUIRED| #IMPLIED | #FIXED "URI2")> 
@@ -489,11 +491,13 @@ Par exemple :
 
 Par exemple :
 
-```xml
+```dtd
 <!ELEMENT prefixe:balise (#PCDATA)>
 <!ATTLIST prefixe:balise xmlns:prefixe CDATA #FIXED "URI"> 
 <!ATTLIST prefixe:balise xmlns:prefixeAttribut CDATA #REQUIRED> 
 <!ATTLIST prefixe:balise prefixeAttribut:nom spécifications>
+```
+```xml
 ...
 <prefixe:balise xmlns:prefixe="URI" xmlns:prefixeAttribut="URI2" prefixeAttribut:nom="XML">
   contenu
@@ -509,9 +513,36 @@ Pour cela :
 2. Utiliser au moins un service pour valider votre fichier.
 
 ```bash
+# utilisation de l'outil livré avec libxml2 :
 $ xmllint --noout --valid fichier.xml
-$ CLASS_PATH=.:$XERCES_HOME/xercesImpl.ja:$XERCES_HOME/xml-apis.jar:$XERCES_HOME/xercesSamples.jar java sax.Counter -v fichier.xml
+# utilisation de l'outil java xerces :
+$ XERCES=$XERCES_HOME/xercesImpl.jar:$XERCES_HOME/xml-apis.jar:$XERCES_HOME/xercesSamples.jar && \
+  CLASS_PATH=.:$XERCES && \
+  java sax.Counter -v fichier.xml
 ```
+
+
+# UML #
+
+## Principes d'encodage ##
+
+* Exemple de Règles simples :
+    * Nom du diagramme : `DOCTYPE`, espace de nommage et balise racine ;
+    * Classe : balise ;
+    * Propriété d'une classe : attribut d'une balise ;
+    * Relation entre classes :
+        * 1-N (N≥1) : attribut sur la classe de départ de la relation ;
+        * N-1 (N>1) : attribut sur la classe d'arrivée du lien ;
+        * N-M : balise avec les identifiants des objets entre attributs.
+    * Corps d'une balise :
+        * attribut textuel ;
+        * relation de composition/aggrégation.
+
+_Il existe d'autres règles plus complexes ..._
+
+## Exemple d'application ##
+
+![Diagramme UML des stagiaires](img/stagiaires-uml.png "UML")
 
 
 # AJAX #
@@ -541,7 +572,7 @@ $ CLASS_PATH=.:$XERCES_HOME/xercesImpl.ja:$XERCES_HOME/xml-apis.jar:$XERCES_HOME
 * http://www.liafa.jussieu.fr/~carton/Enseignement/XML/Cours/
 * http://www.gchagnon.fr/cours/xml/index.html
 
-![](img/by-nc-sa.png)
+![Document sous licence Creative Commons 3 BY-NC-SA](img/by-nc-sa.png)
 
 <div class="notes">
 * Validateurs :
@@ -556,6 +587,6 @@ $ CLASS_PATH=.:$XERCES_HOME/xercesImpl.ja:$XERCES_HOME/xml-apis.jar:$XERCES_HOME
 pandoc -s -t revealjs --slide-level=2 --section-divs --template=template/ign-ensg-revealjs.html --email-obfuscation=none --css=css/ign.css --highlight-style=kate -V revealjs-url=externals/reveal.js -V slideNumber=true -V transition=none -o XML1-A-slides.html XML1-A-slides.md
 ```
 
-* version des diapositives : 2.2.0
+* version des diapositives : 2.2.1
 </div>
 
