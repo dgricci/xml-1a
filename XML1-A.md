@@ -4,6 +4,7 @@
 
 ---
 
+\newpage
 
 # Découverte d’XML #
 
@@ -37,14 +38,13 @@ Notes de [cours](XML1-a-slides).
 
 ---
 
+\newpage
 
 ## XML : un ensemble de langages ##
 
 XML[^xml] signifie e**X**tended **M**arkup **L**anguage : il permet de décrire
 dans un format texte (lisible par l'être humain) la structure et le contenu
 d’un document (analysable par un logiciel).
-
-\newpage
 
 _Exemple d’un extrait de fichier XML (mis en page pour être lisible) :_
 
@@ -93,6 +93,8 @@ _Exemple d’un extrait de fichier XML (mis en page pour être lisible) :_
     </gml:ProjectedCRS>
 </crs><!--RGF93LAMB93 CRS END-->
 ```
+
+\newpage
 
 #### Caractéristiques du XML ####
 
@@ -251,6 +253,8 @@ représente un élément structurel ou visuel d'une page web ou d'un document
 XML. Il est utilisé à partir d'un langage de programmation orientée objet tel
 que JavaScript pour inspecter et modifier le contenu des pages Web.
 
+\newpage
+
 #### Exemple ####
 
 Saisie de deux nombres, calcul de leur somme et affichage du résultat.
@@ -287,6 +291,8 @@ Saisie de deux nombres, calcul de leur somme et affichage du résultat.
   </body>
 </html>
 ```
+
+\newpage
 
 *  script.js :
 
@@ -360,6 +366,7 @@ balises XML :
 |Modélisation du contenu (DTD ou XSD)              |
 +--------------------------------------------------+
 
+\newpage
 
 ## Les règles d’encodage ##
 
@@ -367,8 +374,6 @@ Un fichier XML est régi par des règles strictes, il doit être :
 
 * bien formé ;
 * valide.
-
-\newpage
 
 ### Document bien formé ###
 
@@ -422,8 +427,6 @@ De la même façon pour les commentaires :
 
 On doit écrire `<!--` et `-->` tout lié !
 
-\newpage
-
 Par contre, les espaces ailleurs sont non significatifs :
 
 ```xml
@@ -440,7 +443,7 @@ est équivalent à :
 </nomBalise>
 ```
 
-À savoir aussi que :
+À savoir aussi que c'est deux écritures sont équivalentes :
 
 ```xml
 <nomBalise></nomBalise>
@@ -452,7 +455,7 @@ et
 <nomBalise/>
 ```
 
-sont deux écritures équivalentes.
+\newpage
 
 ##### Éditeurs #####
 
@@ -465,6 +468,8 @@ d'utiliser des logiciels qui permettent l'analyse à la volée du XML écrit
 * Eclipse IDE
 * Kate
 * notepad++
+
+\newpage
 
 #### Le prologue ####
 
@@ -512,6 +517,7 @@ Pour décrire la structure des données, on peut utiliser deux mécanismes :
 * la DTD ;
 * le schéma XML.
 
+\newpage
 
 ### Document valide ###
 
@@ -520,8 +526,6 @@ définie dans une DTD (Document Definition Type) ou un XSD (XML Schema
 Definition).
 Dans la suite du paragraphe, nous allons traiter la manière de gérer les DTD.
 Nous verrons dans le chapitre suivant comment on utilise les XSD.
-
-\newpage
 
 #### Document Type Definition (DTD) ####
 
@@ -565,8 +569,6 @@ La DTD vaudra dans notre exemple :
 <!-- fin de la DTD -->
 ```
 
-\newpage
-
 3. Des entités internes (ou jeux de remplacement)
 
 ```xml
@@ -589,6 +591,8 @@ salutations distinguées">
 On notera que l'on met en fin de prologue les entités ayant une valeur de
 remplacement.
 
+\newpage
+
 Certaines entités sont prédéfinies car utilisées par XML. Ce sont :
 
 +-------------------+------------+
@@ -604,8 +608,6 @@ Certaines entités sont prédéfinies car utilisées par XML. Ce sont :
 +-------------------+------------+
 | '                 | \&aquot;   |
 +-------------------+------------+
-
-\newpage
 
 4. Des entités externes adressées par URL
 
@@ -656,6 +658,8 @@ On récupère ainsi des symboles comme \&radic;, \&larr; ...
 Il convient à présent de voir quelles sont les manières de traiter
 l’arborescence au sein d’une DTD.
 
+\newpage
+
 ##### Élement ou balise #####
 
 Chaque élément (balise) est déclaré dans une balise :
@@ -666,8 +670,6 @@ Chaque élément (balise) est déclaré dans une balise :
 
 Chaque élément peut avoir des attributs et des éléments fils ou un contenu
 prédéfini.
-
-\newpage
 
 __Traitement des éléments fils :__
 
@@ -703,6 +705,8 @@ vides comme suit :
 <!ELEMENT vide EMPTY>
 ```
 
+\newpage
+
 ##### Traitements des attributs #####
 
 Les éléments peuvent être précisés par des attributs selon la syntaxe
@@ -735,6 +739,8 @@ Les déclarations d'attributs peuvent être :
 * non obligatoire et pouvant rester vide `#IMPLIED` ;
 * avec une valeur par défaut directement déclarée ;
 * avec une valeur constante via `#FIXED "valeur_de_la_constante"`;
+
+\newpage
 
 ## Les espaces de noms ##
 
@@ -847,6 +853,8 @@ d'être déclaré. Les quatre attributs particuliers `xml:lang`, `xml:space`,
 +----------------------+-----------------+-------------------------------------------+
 | Dublin Core          | dc              | http://purl.org/dc/elements/1.1/          |
 +----------------------+-----------------+-------------------------------------------+
+
+\newpage
 
 ## D'un modèle à un encodage des données ##
 
@@ -1309,5 +1317,5 @@ _fin du document[^pandoc_gen]_
 [^uml]: https://fr.wikipedia.org/wiki/UML_%28informatique%29
 [^iso19136]: http://www.iso.org/iso/fr/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=32554
 [^iso19136-2]: http://www.iso.org/iso/fr/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=61585
-[^pandoc_gen]: document généré via $ `pandoc -s -N --toc -o XML1-A.pdf XML1-A.md`{.bash}
+[^pandoc_gen]: document généré via $ `pandoc c -V fontsize=10pt -V geometry:"top=2cm, bottom=2cm, left=1cm, right=1cm" -s -N --toc -o XML1-A.pdf XML1-A.md`{.bash}
 
