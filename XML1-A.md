@@ -1317,5 +1317,5 @@ _fin du document[^pandoc_gen]_
 [^uml]: https://fr.wikipedia.org/wiki/UML_%28informatique%29
 [^iso19136]: http://www.iso.org/iso/fr/home/store/catalogue_ics/catalogue_detail_ics.htm?csnumber=32554
 [^iso19136-2]: http://www.iso.org/iso/fr/iso_catalogue/catalogue_tc/catalogue_detail.htm?csnumber=61585
-[^pandoc_gen]: document généré via $ `pandoc c -V fontsize=10pt -V geometry:"top=2cm, bottom=2cm, left=1cm, right=1cm" -s -N --toc -o XML1-A.pdf XML1-A.md`{.bash}
+[^pandoc_gen]: document généré via $ `pandoc -V fontsize=10pt -V geometry:"top=2cm, bottom=2cm, left=1cm, right=1cm" -s -N --toc -o XML1-A.pdf XML1-A.md`{.bash}
 
